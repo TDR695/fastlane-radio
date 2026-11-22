@@ -1,0 +1,8 @@
+# Built and shipped files go to GitHub Releases, not the repo
+*.exe
+*.zip
+build/
+
+# Local screenshots and old notes
+*.png
+README-extended.md

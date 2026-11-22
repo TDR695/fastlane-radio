@@ -1,0 +1,26 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build FastLaneRadio.exe
+        shell: cmd
+        run: build.cmd
+
+      # SignPath signing goes here once the project is approved; it signs this artifact.
+      - name: Upload
+        id: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: radio_fastlane
+          path: |
+            FastLaneRadio.exe
+            README.txt
