@@ -7,5 +7,5 @@ using System.Reflection;
 [assembly: AssemblyCompany("FastLane")]
 [assembly: AssemblyProduct("FastLane Radio")]
 [assembly: AssemblyCopyright("Copyright 2026 FastLane")]
-[assembly: AssemblyVersion("1.0.2.0")]
-[assembly: AssemblyFileVersion("1.0.2.0")]
+[assembly: AssemblyVersion("1.0.3.0")]
+[assembly: AssemblyFileVersion("1.0.3.0")]

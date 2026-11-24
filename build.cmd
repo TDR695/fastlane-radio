@@ -10,7 +10,13 @@ set TMP=%~dp0build
 set TEMP=%~dp0build
 if not exist "%TMP%" mkdir "%TMP%"
 
-"%FW%\csc.exe" -nologo -target:winexe -optimize+ -out:"%~dp0FastLaneRadio.exe" %REFS% ^
+rem the default stations' logos, embedded as logos/<file>; a response file, as a hundred of
+rem them would pass cmd's 8191-character line limit
+set LOGOS=%TMP%\logos.rsp
+if exist "%LOGOS%" del "%LOGOS%"
+for %%f in ("%~dp0logos\*.png") do echo -resource:"%%~f",logos/%%~nxf>> "%LOGOS%"
+
+"%FW%\csc.exe" -nologo -target:winexe -optimize+ -out:"%~dp0FastLaneRadio.exe" %REFS% @"%LOGOS%" ^
   -win32icon:"%~dp0FastLaneRadio.ico" -resource:"%~dp0FastLaneRadio.ico",FastLaneRadio.ico ^
   -r:"%FW%\System.Runtime.dll" -r:"%FW%\System.Runtime.WindowsRuntime.dll" ^
   -r:"%FW%\System.Runtime.InteropServices.WindowsRuntime.dll" -r:System.Web.Extensions.dll ^

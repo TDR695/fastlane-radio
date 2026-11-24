@@ -3,6 +3,7 @@
 *.zip
 build/
 
-# Local screenshots and old notes
-*.png
+# Local screenshots, documents and old notes (logos/ holds the default station logos and is kept)
+/*.png
+*.pdf
 README-extended.md

@@ -35,6 +35,8 @@ static class StationsWindow
 
     public static void Show(EventWaitHandle quit)
     {
+        // logos still missing are looked up only once the player opens the window, never in the background
+        LogoFinder.Start();
         lock (gate)
         {
             if (opening) return;

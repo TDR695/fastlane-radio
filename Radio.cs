@@ -69,7 +69,6 @@ static class Radio
 
             Stations.Load();
             Stations.PublishAll();
-            LogoFinder.Start();
             Tray.Start(quit);
             if (!fromStartup) StationsWindow.Show(quit);
             new Player(null).Run(quit, show);
@@ -555,107 +554,107 @@ static class Stations
     static List<Station> Defaults()
     {
         return new List<Station> {
-            new Station { Name = "100% Radio 80", Country = "France", Genre = "80s", Url = "http://100radio-80.ice.infomaniak.ch/100radio-80-128.mp3" },
-            new Station { Name = "1LIVE", Country = "Germany", Genre = "Pop, Rock", Url = "https://wdr-1live-live.icecastssl.wdr.de/wdr/1live/live/mp3/128/stream.mp3" },
-            new Station { Name = "80s Forever", Country = "Switzerland", Genre = "80s", Url = "https://premium.shoutcastsolutions.com/radio/8050/256.mp3" },
-            new Station { Name = "90lar", Country = "Turkey", Genre = "90s, Turkish Pop", Url = "http://37.247.98.8/stream/166/" },
-            new Station { Name = "Albania 360 Radio", Country = "Albania", Genre = "Pop", Url = "https://radio.albania360.net/listen/albania_360_radio/radio.mp3" },
-            new Station { Name = "Arrow Classic Rock", Country = "Netherlands", Genre = "Classic Rock", Url = "http://stream.gal.io/arrow" },
-            new Station { Name = "Avto Radio", Country = "Bulgaria", Genre = "Pop, Rock", Url = "https://playerservices.streamtheworld.com/api/livestream-redirect/AVTORADIOAAC_L.aac" },
-            new Station { Name = "Bandit Rock", Country = "Sweden", Genre = "Rock", Url = "http://fm02-ice.stream.khz.se/fm02_mp3" },
-            new Station { Name = "Bayern 3", Country = "Germany", Genre = "Pop", Url = "https://dispatcher.rndfnk.com/br/br3/live/mp3/mid" },
-            new Station { Name = "BBC Radio 2", Country = "UK", Genre = "Pop, Adult Contemporary", Url = "https://as-hls-ww-live.akamaized.net/pool_74208725/live/ww/bbc_radio_two/bbc_radio_two.isml/bbc_radio_two-audio%3d128000.norewind.m3u8" },
-            new Station { Name = "Bylgjan", Country = "Iceland", Genre = "Pop", Url = "http://icecast.365net.is:8000/orbbylgjan.aac" },
-            new Station { Name = "Cadena 100", Country = "Spain", Genre = "Pop", Url = "http://cadena100-streamers-mp3.flumotion.com/cope/cadena100.mp3" },
-            new Station { Name = "Calypso Radio", Country = "Malta", Genre = "Pop", Url = "https://s4.radio.co/sf3aa4c25a/listen" },
-            new Station { Name = "Capital FM", Country = "UK", Genre = "Pop, Top 40", Url = "https://media-ssl.musicradio.com/CapitalMP3" },
-            new Station { Name = "Classic 21", Country = "Belgium", Genre = "Classic Rock", Url = "http://radios.rtbf.be/classic21-128.mp3" },
-            new Station { Name = "Classic FM", Country = "UK", Genre = "Classical", Url = "http://ice-the.musicradio.com/ClassicFMMP3" },
-            new Station { Name = "Country Radio", Country = "Czechia", Genre = "Country", Url = "http://icecast2.play.cz:8000/country128aac" },
-            new Station { Name = "Dance FM", Country = "Romania", Genre = "Dance, Electronic", Url = "http://edge126.rdsnet.ro:84/profm/dancefm.mp3" },
-            new Station { Name = "De Tijdloze", Country = "Belgium", Genre = "Rock, Classics", Url = "http://icecast.vrtcdn.be/stubru_tijdloze-high.mp3" },
-            new Station { Name = "Diesi", Country = "Cyprus", Genre = "Greek Pop", Url = "http://r1.cloudskep.com/radio/diesi/icecast.audio" },
-            new Station { Name = "Digi FM", Country = "Romania", Genre = "News, Talk, Top 40", Url = "http://edge76.rdsnet.ro:84/digifm/digifm.mp3" },
-            new Station { Name = "DR P3", Country = "Denmark", Genre = "Pop, Rock", Url = "http://live-icy.dr.dk/A/A05H.mp3" },
-            new Station { Name = "DR P8 Jazz", Country = "Denmark", Genre = "Jazz", Url = "http://live-icy.dr.dk/A/A22H.mp3" },
-            new Station { Name = "Eldoradio", Country = "Luxembourg", Genre = "Pop", Url = "http://81.92.238.33/" },
-            new Station { Name = "Energy NRJ Bulgaria", Country = "Bulgaria", Genre = "Pop, Dance", Url = "http://play.global.audio/nrj128" },
-            new Station { Name = "Energy Z\u00fcrich", Country = "Switzerland", Genre = "Pop, Dance", Url = "http://broadcast.infomaniak.ch/energyzuerich-high.mp3" },
-            new Station { Name = "Eska Rock", Country = "Poland", Genre = "Rock", Url = "https://ic2.smcdn.pl/5380-1.mp3" },
-            new Station { Name = "Europa FM", Country = "Romania", Genre = "Pop, News", Url = "https://astreaming.edi.ro:8443/EuropaFM_aac" },
-            new Station { Name = "FM104", Country = "Ireland", Genre = "Pop", Url = "https://wg.cdn.tibus.net/fm104MP3128" },
-            new Station { Name = "FM4", Country = "Austria", Genre = "Alternative, Electronic", Url = "https://orf-live.ors-shoutcast.at/fm4-q2a" },
-            new Station { Name = "France Inter", Country = "France", Genre = "News, Talk", Url = "https://icecast.radiofrance.fr/franceinter-midfi.mp3" },
-            new Station { Name = "Fun Radio", Country = "France", Genre = "Dance, Electro", Url = "http://icecast.funradio.fr/fun-1-44-128" },
-            new Station { Name = "Fun Radio Slovakia", Country = "Slovakia", Genre = "Pop", Url = "http://stream.funradio.sk:8000/fun128.mp3" },
-            new Station { Name = "Heart 80s", Country = "UK", Genre = "80s, Pop", Url = "https://media-ssl.musicradio.com/Heart80sMP3" },
-            new Station { Name = "Hiper FM", Country = "Portugal", Genre = "Pop, Top 40", Url = "http://195.23.85.126:9500/;" },
-            new Station { Name = "Hit FM", Country = "Ukraine", Genre = "Pop, Dance", Url = "http://195.95.206.17/HitFM" },
-            new Station { Name = "Hitr\u00e1dio Devades\u00e1tka", Country = "Czechia", Genre = "90s, Pop", Url = "http://ice.abradio.cz/hit90128.mp3" },
-            new Station { Name = "Hitradio \u00d63", Country = "Austria", Genre = "Pop", Url = "https://orf-live.ors-shoutcast.at/oe3-q2a" },
-            new Station { Name = "I Love Radio", Country = "Germany", Genre = "Top 40, Hip-Hop", Url = "https://streams.ilovemusic.de/iloveradio1.mp3" },
-            new Station { Name = "Jazz Radio", Country = "France", Genre = "Jazz, Soul", Url = "http://jazzradio.ice.infomaniak.ch/jazzradio-high.mp3" },
-            new Station { Name = "Kiss 92.9", Country = "Greece", Genre = "Pop", Url = "http://netradio.live24.gr/kissfmathens" },
-            new Station { Name = "Kiss FM", Country = "Romania", Genre = "Top 40", Url = "https://live.kissfm.ro/kissfm.aacp" },
-            new Station { Name = "Kiss Radio", Country = "Czechia", Genre = "Pop", Url = "https://icecast1.play.cz/kissdelta128.mp3" },
-            new Station { Name = "Kronehit", Country = "Austria", Genre = "Pop, Dance", Url = "https://secureonair.krone.at/kronehit-hp.mp3" },
-            new Station { Name = "L'Essentiel Radio", Country = "Luxembourg", Genre = "Pop, Top 40", Url = "http://lessentielradio.ice.infomaniak.ch/lessentielradio-128.mp3" },
-            new Station { Name = "LOS40", Country = "Spain", Genre = "Top 40, Latin", Url = "https://playerservices.streamtheworld.com/api/livestream-redirect/LOS40.mp3" },
-            new Station { Name = "Lux FM", Country = "Ukraine", Genre = "Pop", Url = "http://lux.radio.tvstitch.com/kyiv/lux_adv_sd" },
-            new Station { Name = "Mix Megapol", Country = "Sweden", Genre = "Pop", Url = "https://live-bauerse-fm.sharp-stream.com/mixmegapol_instream_se_mp3" },
-            new Station { Name = "NPO Radio 2", Country = "Netherlands", Genre = "Pop, Classic Hits", Url = "https://icecast.omroep.nl/radio2-bb-mp3" },
-            new Station { Name = "Otvoreni Radio", Country = "Croatia", Genre = "Pop", Url = "http://stream.otvoreni.hr/otvoreni" },
-            new Station { Name = "P4 Norge", Country = "Norway", Genre = "Pop, Hits", Url = "https://p4.p4groupaudio.com/P04_AH" },
-            new Station { Name = "P6 Rock", Country = "Norway", Genre = "Rock, Classic Rock", Url = "https://p6.p4groupaudio.com/P06_MM" },
-            new Station { Name = "R\u00e1di\u00f3 1", Country = "Hungary", Genre = "Dance, Pop", Url = "https://icast.connectmedia.hu/5201/live.mp3" },
-            new Station { Name = "Radio 1 Slovenia", Country = "Slovenia", Genre = "Pop", Url = "http://live.radio.si/Radio1" },
-            new Station { Name = "Radio 10", Country = "Netherlands", Genre = "Classic Hits", Url = "http://playerservices.streamtheworld.com/api/livestream-redirect/RADIO10.mp3" },
-            new Station { Name = "Radio 101", Country = "Croatia", Genre = "Pop, Rock", Url = "http://live.radio101.hr:9531/" },
-            new Station { Name = "Radio 538", Country = "Netherlands", Genre = "Dance, Top 40", Url = "https://playerservices.streamtheworld.com/api/livestream-redirect/RADIO538.mp3" },
-            new Station { Name = "Radio 80", Country = "Italy", Genre = "80s", Url = "http://str01.fluidstream.net:7020/;stream.mp3" },
-            new Station { Name = "Radio Antena", Country = "Slovenia", Genre = "Pop, Rock", Url = "https://live.radio.si/Antena" },
-            new Station { Name = "Radio Bob!", Country = "Germany", Genre = "Rock", Url = "http://streams.radiobob.de/bob-national/mp3-192/mediaplayer" },
-            new Station { Name = "Radio Caroline", Country = "UK", Genre = "Rock, Pop", Url = "http://78.129.202.200:8040/;" },
-            new Station { Name = "R\u00e1dio Comercial", Country = "Portugal", Genre = "Pop", Url = "https://stream-icy.bauermedia.pt/comercial.mp3" },
-            new Station { Name = "Radio Elmag Pop Rock", Country = "Montenegro", Genre = "Pop, Rock", Url = "https://radio.elmag.me/poprock.mp3" },
-            new Station { Name = "R\u00e1dio Expres", Country = "Slovakia", Genre = "Pop", Url = "https://stream.bauermedia.sk/128.mp3" },
-            new Station { Name = "Radio Ibiza", Country = "Italy", Genre = "Dance, Electronic", Url = "http://wma08.fluidstream.net:5010/;stream.aac" },
-            new Station { Name = "Radio Kiss Kiss", Country = "Italy", Genre = "Pop", Url = "http://wma08.fluidstream.net:4610/" },
-            new Station { Name = "R\u00e1dio Ko\u0161ice", Country = "Slovakia", Genre = "Pop, Rock", Url = "http://stream.ecce.sk:8000/radiokosice-128.mp3" },
-            new Station { Name = "Radio Maximum", Country = "Ukraine", Genre = "Pop, Rock", Url = "http://icecastdc.luxnet.ua/maximum_mp3_128" },
-            new Station { Name = "Radio SWH", Country = "Latvia", Genre = "Rock", Url = "http://80.232.162.149:8000/swh96mp3" },
-            new Station { Name = "Radio Swiss Classic", Country = "Switzerland", Genre = "Classical", Url = "https://stream.srg-ssr.ch/m/rsc_de/mp3_128" },
-            new Station { Name = "Radio Swiss Jazz", Country = "Switzerland", Genre = "Jazz", Url = "https://stream.srg-ssr.ch/m/rsj/mp3_128" },
-            new Station { Name = "Radio Swiss Pop", Country = "Switzerland", Genre = "Pop", Url = "https://stream.srg-ssr.ch/m/rsp/mp3_128" },
-            new Station { Name = "Radio Veronika", Country = "Bulgaria", Genre = "Pop-Folk", Url = "http://play.global.audio/veronikahi.aac" },
-            new Station { Name = "Radio Zet", Country = "Poland", Genre = "Pop", Url = "http://zet-net-01.cdn.eurozet.pl:8400/" },
-            new Station { Name = "Radio ZU", Country = "Romania", Genre = "Top 40", Url = "http://zuicast.digitalag.ro:9420/zu" },
-            new Station { Name = "Radio ZUM", Country = "Moldova", Genre = "Dance, Hits", Url = "https://streams.radiozum.md/listen/zum1/ZUM1" },
-            new Station { Name = "Radiocentras", Country = "Lithuania", Genre = "Pop, Rock", Url = "https://stream2.rc.lt/rc128.mp3" },
-            new Station { Name = "Rai Radio 2", Country = "Italy", Genre = "Pop", Url = "http://icestreaming.rai.it/2.mp3" },
-            new Station { Name = "R\u00e1s 2", Country = "Iceland", Genre = "Pop, Rock", Url = "http://netradio.ruv.is/ras2.aac" },
-            new Station { Name = "Relax FM", Country = "Lithuania", Genre = "Pop, Easy Listening", Url = "https://stream1.relaxfm.lt/relaxfm128.mp3" },
-            new Station { Name = "Retro FM Estonia", Country = "Estonia", Genre = "80s, 90s", Url = "https://stream.skymedia.ee/live/RETRO" },
-            new Station { Name = "Retro FM Latvia", Country = "Latvia", Genre = "Classic Hits", Url = "https://live.retrofm.lv/retrofmlatvia" },
-            new Station { Name = "Retro FM Moldova", Country = "Moldova", Genre = "Retro, Oldies", Url = "https://efir.retrofm.md:8000/retro" },
-            new Station { Name = "Retro R\u00e1di\u00f3", Country = "Hungary", Genre = "Retro, 80s, 90s", Url = "https://icast.connectmedia.hu/5001/live.mp3" },
-            new Station { Name = "RFM", Country = "Portugal", Genre = "Pop", Url = "https://playerservices.streamtheworld.com/api/livestream-redirect/RFMAAC.aac" },
-            new Station { Name = "RMF FM", Country = "Poland", Genre = "Pop", Url = "http://195.150.20.242:8000/rmf_fm" },
-            new Station { Name = "RMF MAXX", Country = "Poland", Genre = "Pop, Dance", Url = "http://rs202-krk.rmfstream.pl/RMFMAXXX48" },
-            new Station { Name = "Rock Antenne", Country = "Germany", Genre = "Rock", Url = "http://mp3channels.webradio.rockantenne.de/rockantenne" },
-            new Station { Name = "Rock FM Cyprus", Country = "Cyprus", Genre = "Rock", Url = "http://live3.istoikona.net:8278/;" },
-            new Station { Name = "Rock FM Estonia", Country = "Estonia", Genre = "Rock", Url = "https://edge02.cdn.bitflip.ee:8888/rck?_i=5f5ab186" },
-            new Station { Name = "Sky Radio Skopje", Country = "North Macedonia", Genre = "Pop, Rock", Url = "https://s1.skyradio.com.mk/;*.mp3" },
-            new Station { Name = "Super FM", Country = "Serbia", Genre = "Pop, Hits", Url = "http://onair.superfm.rs/superfm.mp3" },
-            new Station { Name = "S\u00fcper FM", Country = "Turkey", Genre = "Pop", Url = "https://playerservices.streamtheworld.com/api/livestream-redirect/SUPER_FM_SC" },
-            new Station { Name = "SWR3", Country = "Germany", Genre = "Pop, Rock", Url = "https://liveradio.swr.de/sw282p3/swr3/play.mp3" },
-            new Station { Name = "The Funky Channel", Country = "Belgium", Genre = "Funk, Soul, Disco", Url = "http://cast3.my-control-panel.com:8170/stream" },
-            new Station { Name = "Today FM", Country = "Ireland", Genre = "Pop, Rock", Url = "https://stream.audioxi.com/TD" },
-            new Station { Name = "Tomorrowland One World Radio", Country = "Belgium", Genre = "Dance, Electronic", Url = "https://playerservices.streamtheworld.com/api/livestream-redirect/OWR_INTERNATIONAL_ADP.aac" },
-            new Station { Name = "Top Albanian Radio", Country = "Albania", Genre = "Albanian Pop", Url = "https://live.top-media.al/tar" },
-            new Station { Name = "Urban FM", Country = "North Macedonia", Genre = "Pop", Url = "https://securestreams4.autopo.st:1668/stream" },
-            new Station { Name = "Virgin Radio Romania", Country = "Romania", Genre = "Pop, Dance", Url = "http://astreaming.virginradio.ro:8000/virgin_aacp_64k" },
-            new Station { Name = "Zeppelin 106.7", Country = "Greece", Genre = "Rock", Url = "https://radiostreaming.ert.gr/ert-zeppelin" }
+            new Station { Name = "100% Radio 80", Country = "France", Genre = "80s", Url = "http://100radio-80.ice.infomaniak.ch/100radio-80-128.mp3", Logo = "logos/10755670194adc46.png" },
+            new Station { Name = "1LIVE", Country = "Germany", Genre = "Pop, Rock", Url = "https://wdr-1live-live.icecastssl.wdr.de/wdr/1live/live/mp3/128/stream.mp3", Logo = "logos/205aa23228070c92.png" },
+            new Station { Name = "80s Forever", Country = "Switzerland", Genre = "80s", Url = "https://premium.shoutcastsolutions.com/radio/8050/256.mp3", Logo = "logos/f31e2c1bfe24dbd0.png" },
+            new Station { Name = "90lar", Country = "Turkey", Genre = "90s, Turkish Pop", Url = "http://37.247.98.8/stream/166/", Logo = "logos/28532eefe9f4c1cc.png" },
+            new Station { Name = "Albania 360 Radio", Country = "Albania", Genre = "Pop", Url = "https://radio.albania360.net/listen/albania_360_radio/radio.mp3", Logo = "logos/0614b39217b1e4eb.png" },
+            new Station { Name = "Arrow Classic Rock", Country = "Netherlands", Genre = "Classic Rock", Url = "http://stream.gal.io/arrow", Logo = "logos/2f0ebf918bc7f5d6.png" },
+            new Station { Name = "Avto Radio", Country = "Bulgaria", Genre = "Pop, Rock", Url = "https://playerservices.streamtheworld.com/api/livestream-redirect/AVTORADIOAAC_L.aac", Logo = "logos/d88ae92aaacf11ac.png" },
+            new Station { Name = "Bandit Rock", Country = "Sweden", Genre = "Rock", Url = "http://fm02-ice.stream.khz.se/fm02_mp3", Logo = "logos/8273e4ed991d39b0.png" },
+            new Station { Name = "Bayern 3", Country = "Germany", Genre = "Pop", Url = "https://dispatcher.rndfnk.com/br/br3/live/mp3/mid", Logo = "logos/89db4eb95cc9fa10.png" },
+            new Station { Name = "BBC Radio 2", Country = "UK", Genre = "Pop, Adult Contemporary", Url = "https://as-hls-ww-live.akamaized.net/pool_74208725/live/ww/bbc_radio_two/bbc_radio_two.isml/bbc_radio_two-audio%3d128000.norewind.m3u8", Logo = "logos/939e0da2056bff90.png" },
+            new Station { Name = "Bylgjan", Country = "Iceland", Genre = "Pop", Url = "http://icecast.365net.is:8000/orbbylgjan.aac", Logo = "logos/f3dc1d3f68909ef9.png" },
+            new Station { Name = "Cadena 100", Country = "Spain", Genre = "Pop", Url = "http://cadena100-streamers-mp3.flumotion.com/cope/cadena100.mp3", Logo = "logos/18e1f7198d40b8f7.png" },
+            new Station { Name = "Calypso Radio", Country = "Malta", Genre = "Pop", Url = "https://s4.radio.co/sf3aa4c25a/listen", Logo = "logos/5ed9451b91696fa7.png" },
+            new Station { Name = "Capital FM", Country = "UK", Genre = "Pop, Top 40", Url = "https://media-ssl.musicradio.com/CapitalMP3", Logo = "logos/203afa335077d9d6.png" },
+            new Station { Name = "Classic 21", Country = "Belgium", Genre = "Classic Rock", Url = "http://radios.rtbf.be/classic21-128.mp3", Logo = "logos/047ea8eabbdc2517.png" },
+            new Station { Name = "Classic FM", Country = "UK", Genre = "Classical", Url = "http://ice-the.musicradio.com/ClassicFMMP3", Logo = "logos/ad4f9d3b6e0e8516.png" },
+            new Station { Name = "Country Radio", Country = "Czechia", Genre = "Country", Url = "http://icecast2.play.cz:8000/country128aac", Logo = "logos/f5bfa8c34c929067.png" },
+            new Station { Name = "Dance FM", Country = "Romania", Genre = "Dance, Electronic", Url = "http://edge126.rdsnet.ro:84/profm/dancefm.mp3", Logo = "logos/259ab4df2f29faf7.png" },
+            new Station { Name = "De Tijdloze", Country = "Belgium", Genre = "Rock, Classics", Url = "http://icecast.vrtcdn.be/stubru_tijdloze-high.mp3", Logo = "logos/80b0e967acbf9fdf.png" },
+            new Station { Name = "Diesi", Country = "Cyprus", Genre = "Greek Pop", Url = "http://r1.cloudskep.com/radio/diesi/icecast.audio", Logo = "logos/0549691ad94dae76.png" },
+            new Station { Name = "Digi FM", Country = "Romania", Genre = "News, Talk, Top 40", Url = "http://edge76.rdsnet.ro:84/digifm/digifm.mp3", Logo = "logos/8291d5a08a8c327a.png" },
+            new Station { Name = "DR P3", Country = "Denmark", Genre = "Pop, Rock", Url = "http://live-icy.dr.dk/A/A05H.mp3", Logo = "logos/fa7871c8767c19fa.png" },
+            new Station { Name = "DR P8 Jazz", Country = "Denmark", Genre = "Jazz", Url = "http://live-icy.dr.dk/A/A22H.mp3", Logo = "logos/fa7871c8767c19fa.png" },
+            new Station { Name = "Eldoradio", Country = "Luxembourg", Genre = "Pop", Url = "http://81.92.238.33/", Logo = "logos/d72394dcecee976e.png" },
+            new Station { Name = "Energy NRJ Bulgaria", Country = "Bulgaria", Genre = "Pop, Dance", Url = "http://play.global.audio/nrj128", Logo = "logos/01c758c00d1ad768.png" },
+            new Station { Name = "Energy Z\u00fcrich", Country = "Switzerland", Genre = "Pop, Dance", Url = "http://broadcast.infomaniak.ch/energyzuerich-high.mp3", Logo = "logos/9df917446c566ecf.png" },
+            new Station { Name = "Eska Rock", Country = "Poland", Genre = "Rock", Url = "https://ic2.smcdn.pl/5380-1.mp3", Logo = "logos/7843a6691910e150.png" },
+            new Station { Name = "Europa FM", Country = "Romania", Genre = "Pop, News", Url = "https://astreaming.edi.ro:8443/EuropaFM_aac", Logo = "logos/33c6393ded5947cd.png" },
+            new Station { Name = "FM104", Country = "Ireland", Genre = "Pop", Url = "https://wg.cdn.tibus.net/fm104MP3128", Logo = "logos/96188fdf9f9e783e.png" },
+            new Station { Name = "FM4", Country = "Austria", Genre = "Alternative, Electronic", Url = "https://orf-live.ors-shoutcast.at/fm4-q2a", Logo = "logos/064ba99691ea9bd6.png" },
+            new Station { Name = "France Inter", Country = "France", Genre = "News, Talk", Url = "https://icecast.radiofrance.fr/franceinter-midfi.mp3", Logo = "logos/b3d30d4cacd4965e.png" },
+            new Station { Name = "Fun Radio", Country = "France", Genre = "Dance, Electro", Url = "http://icecast.funradio.fr/fun-1-44-128", Logo = "logos/96aed1f78f74cd0e.png" },
+            new Station { Name = "Fun Radio Slovakia", Country = "Slovakia", Genre = "Pop", Url = "http://stream.funradio.sk:8000/fun128.mp3", Logo = "logos/e541369d300f06bb.png" },
+            new Station { Name = "Heart 80s", Country = "UK", Genre = "80s, Pop", Url = "https://media-ssl.musicradio.com/Heart80sMP3", Logo = "logos/a4f04795f53003ad.png" },
+            new Station { Name = "Hiper FM", Country = "Portugal", Genre = "Pop, Top 40", Url = "http://195.23.85.126:9500/;", Logo = "logos/a7e5ca2e98e9ad5c.png" },
+            new Station { Name = "Hit FM", Country = "Ukraine", Genre = "Pop, Dance", Url = "http://195.95.206.17/HitFM", Logo = "logos/4f66e5d44de84a89.png" },
+            new Station { Name = "Hitr\u00e1dio Devades\u00e1tka", Country = "Czechia", Genre = "90s, Pop", Url = "http://ice.abradio.cz/hit90128.mp3", Logo = "logos/7595a61867aa4eb6.png" },
+            new Station { Name = "Hitradio \u00d63", Country = "Austria", Genre = "Pop", Url = "https://orf-live.ors-shoutcast.at/oe3-q2a", Logo = "logos/c1a5297b3ee4facc.png" },
+            new Station { Name = "I Love Radio", Country = "Germany", Genre = "Top 40, Hip-Hop", Url = "https://streams.ilovemusic.de/iloveradio1.mp3", Logo = "logos/96fea98b6f229eaa.png" },
+            new Station { Name = "Jazz Radio", Country = "France", Genre = "Jazz, Soul", Url = "http://jazzradio.ice.infomaniak.ch/jazzradio-high.mp3", Logo = "logos/550f93eac80b6938.png" },
+            new Station { Name = "Kiss 92.9", Country = "Greece", Genre = "Pop", Url = "http://netradio.live24.gr/kissfmathens", Logo = "logos/2734cbeb3dad10ba.png" },
+            new Station { Name = "Kiss FM", Country = "Romania", Genre = "Top 40", Url = "https://live.kissfm.ro/kissfm.aacp", Logo = "logos/148e26b66d22eb6e.png" },
+            new Station { Name = "Kiss Radio", Country = "Czechia", Genre = "Pop", Url = "https://icecast1.play.cz/kissdelta128.mp3", Logo = "logos/bf74eb9847354505.png" },
+            new Station { Name = "Kronehit", Country = "Austria", Genre = "Pop, Dance", Url = "https://secureonair.krone.at/kronehit-hp.mp3", Logo = "logos/d4100575a330d443.png" },
+            new Station { Name = "L'Essentiel Radio", Country = "Luxembourg", Genre = "Pop, Top 40", Url = "http://lessentielradio.ice.infomaniak.ch/lessentielradio-128.mp3", Logo = "logos/5c980ce5356fef0f.png" },
+            new Station { Name = "LOS40", Country = "Spain", Genre = "Top 40, Latin", Url = "https://playerservices.streamtheworld.com/api/livestream-redirect/LOS40.mp3", Logo = "logos/8a3048e5ff0e0148.png" },
+            new Station { Name = "Lux FM", Country = "Ukraine", Genre = "Pop", Url = "http://lux.radio.tvstitch.com/kyiv/lux_adv_sd", Logo = "logos/e9f89fff7ab04da5.png" },
+            new Station { Name = "Mix Megapol", Country = "Sweden", Genre = "Pop", Url = "https://live-bauerse-fm.sharp-stream.com/mixmegapol_instream_se_mp3", Logo = "logos/28bbfa9254e5f1aa.png" },
+            new Station { Name = "NPO Radio 2", Country = "Netherlands", Genre = "Pop, Classic Hits", Url = "https://icecast.omroep.nl/radio2-bb-mp3", Logo = "logos/62eaf3ed32cef68e.png" },
+            new Station { Name = "Otvoreni Radio", Country = "Croatia", Genre = "Pop", Url = "http://stream.otvoreni.hr/otvoreni", Logo = "logos/6faaee54fa254f6e.png" },
+            new Station { Name = "P4 Norge", Country = "Norway", Genre = "Pop, Hits", Url = "https://p4.p4groupaudio.com/P04_AH", Logo = "logos/2b4c690a6e964c92.png" },
+            new Station { Name = "P6 Rock", Country = "Norway", Genre = "Rock, Classic Rock", Url = "https://p6.p4groupaudio.com/P06_MM", Logo = "logos/0d35824bf4833414.png" },
+            new Station { Name = "R\u00e1di\u00f3 1", Country = "Hungary", Genre = "Dance, Pop", Url = "https://icast.connectmedia.hu/5201/live.mp3", Logo = "logos/e0f700ee39d419e9.png" },
+            new Station { Name = "Radio 1 Slovenia", Country = "Slovenia", Genre = "Pop", Url = "http://live.radio.si/Radio1", Logo = "logos/140b0a5334cfe15c.png" },
+            new Station { Name = "Radio 10", Country = "Netherlands", Genre = "Classic Hits", Url = "http://playerservices.streamtheworld.com/api/livestream-redirect/RADIO10.mp3", Logo = "logos/95927ed4ffff898a.png" },
+            new Station { Name = "Radio 101", Country = "Croatia", Genre = "Pop, Rock", Url = "http://live.radio101.hr:9531/", Logo = "logos/0af3b8f93481787f.png" },
+            new Station { Name = "Radio 538", Country = "Netherlands", Genre = "Dance, Top 40", Url = "https://playerservices.streamtheworld.com/api/livestream-redirect/RADIO538.mp3", Logo = "logos/d9171811cf7170f7.png" },
+            new Station { Name = "Radio 80", Country = "Italy", Genre = "80s", Url = "http://str01.fluidstream.net:7020/;stream.mp3", Logo = "logos/2ee5755bc7d75f70.png" },
+            new Station { Name = "Radio Antena", Country = "Slovenia", Genre = "Pop, Rock", Url = "https://live.radio.si/Antena", Logo = "logos/5974819bb9ddaafe.png" },
+            new Station { Name = "Radio Bob!", Country = "Germany", Genre = "Rock", Url = "http://streams.radiobob.de/bob-national/mp3-192/mediaplayer", Logo = "logos/1b142e4f9957ed5f.png" },
+            new Station { Name = "Radio Caroline", Country = "UK", Genre = "Rock, Pop", Url = "http://78.129.202.200:8040/;", Logo = "logos/d865bb3d4312da7b.png" },
+            new Station { Name = "R\u00e1dio Comercial", Country = "Portugal", Genre = "Pop", Url = "https://stream-icy.bauermedia.pt/comercial.mp3", Logo = "logos/5260b2ffbde46e24.png" },
+            new Station { Name = "Radio Elmag Pop Rock", Country = "Montenegro", Genre = "Pop, Rock", Url = "https://radio.elmag.me/poprock.mp3", Logo = "logos/2b845f40e46c677f.png" },
+            new Station { Name = "R\u00e1dio Expres", Country = "Slovakia", Genre = "Pop", Url = "https://stream.bauermedia.sk/128.mp3", Logo = "logos/cd0bc737e92015fb.png" },
+            new Station { Name = "Radio Ibiza", Country = "Italy", Genre = "Dance, Electronic", Url = "http://wma08.fluidstream.net:5010/;stream.aac", Logo = "logos/aa7ade88b73a41dc.png" },
+            new Station { Name = "Radio Kiss Kiss", Country = "Italy", Genre = "Pop", Url = "http://wma08.fluidstream.net:4610/", Logo = "logos/06bb9274fd5037c2.png" },
+            new Station { Name = "R\u00e1dio Ko\u0161ice", Country = "Slovakia", Genre = "Pop, Rock", Url = "http://stream.ecce.sk:8000/radiokosice-128.mp3", Logo = "logos/1f8060997fb7648f.png" },
+            new Station { Name = "Radio Maximum", Country = "Ukraine", Genre = "Pop, Rock", Url = "http://icecastdc.luxnet.ua/maximum_mp3_128", Logo = "logos/ced336d54c8b027f.png" },
+            new Station { Name = "Radio SWH", Country = "Latvia", Genre = "Rock", Url = "http://80.232.162.149:8000/swh96mp3", Logo = "logos/bc4da711326bc2b8.png" },
+            new Station { Name = "Radio Swiss Classic", Country = "Switzerland", Genre = "Classical", Url = "https://stream.srg-ssr.ch/m/rsc_de/mp3_128", Logo = "logos/d95797e25620de42.png" },
+            new Station { Name = "Radio Swiss Jazz", Country = "Switzerland", Genre = "Jazz", Url = "https://stream.srg-ssr.ch/m/rsj/mp3_128", Logo = "logos/08bd4b642c6603fb.png" },
+            new Station { Name = "Radio Swiss Pop", Country = "Switzerland", Genre = "Pop", Url = "https://stream.srg-ssr.ch/m/rsp/mp3_128", Logo = "logos/284e6c64655dc505.png" },
+            new Station { Name = "Radio Veronika", Country = "Bulgaria", Genre = "Pop-Folk", Url = "http://play.global.audio/veronikahi.aac", Logo = "logos/12c225f3ce293577.png" },
+            new Station { Name = "Radio Zet", Country = "Poland", Genre = "Pop", Url = "http://zet-net-01.cdn.eurozet.pl:8400/", Logo = "logos/c3d1d7203a09c01b.png" },
+            new Station { Name = "Radio ZU", Country = "Romania", Genre = "Top 40", Url = "http://zuicast.digitalag.ro:9420/zu", Logo = "logos/3d6d0022a6eb6c1f.png" },
+            new Station { Name = "Radio ZUM", Country = "Moldova", Genre = "Dance, Hits", Url = "https://streams.radiozum.md/listen/zum1/ZUM1", Logo = "logos/3811d75accb6c902.png" },
+            new Station { Name = "Radiocentras", Country = "Lithuania", Genre = "Pop, Rock", Url = "https://stream2.rc.lt/rc128.mp3", Logo = "logos/eb5206eea4c5ae3a.png" },
+            new Station { Name = "Rai Radio 2", Country = "Italy", Genre = "Pop", Url = "http://icestreaming.rai.it/2.mp3", Logo = "logos/23db03afbc47a566.png" },
+            new Station { Name = "R\u00e1s 2", Country = "Iceland", Genre = "Pop, Rock", Url = "http://netradio.ruv.is/ras2.aac", Logo = "logos/0680f7aa7d8e8114.png" },
+            new Station { Name = "Relax FM", Country = "Lithuania", Genre = "Pop, Easy Listening", Url = "https://stream1.relaxfm.lt/relaxfm128.mp3", Logo = "logos/de23dea7c6ef327a.png" },
+            new Station { Name = "Retro FM Estonia", Country = "Estonia", Genre = "80s, 90s", Url = "https://stream.skymedia.ee/live/RETRO", Logo = "logos/dd8cd3602aa31cdd.png" },
+            new Station { Name = "Retro FM Latvia", Country = "Latvia", Genre = "Classic Hits", Url = "https://live.retrofm.lv/retrofmlatvia", Logo = "logos/ec3d9b048fd505bb.png" },
+            new Station { Name = "Retro FM Moldova", Country = "Moldova", Genre = "Retro, Oldies", Url = "https://efir.retrofm.md:8000/retro", Logo = "logos/6513b1582231ce65.png" },
+            new Station { Name = "Retro R\u00e1di\u00f3", Country = "Hungary", Genre = "Retro, 80s, 90s", Url = "https://icast.connectmedia.hu/5001/live.mp3", Logo = "logos/56ba7881589b3606.png" },
+            new Station { Name = "RFM", Country = "Portugal", Genre = "Pop", Url = "https://playerservices.streamtheworld.com/api/livestream-redirect/RFMAAC.aac", Logo = "logos/74b574b8ea4e5e21.png" },
+            new Station { Name = "RMF FM", Country = "Poland", Genre = "Pop", Url = "http://195.150.20.242:8000/rmf_fm", Logo = "logos/ea9ef4bb4ab83ee4.png" },
+            new Station { Name = "RMF MAXX", Country = "Poland", Genre = "Pop, Dance", Url = "http://rs202-krk.rmfstream.pl/RMFMAXXX48", Logo = "logos/59eb9463588a45f3.png" },
+            new Station { Name = "Rock Antenne", Country = "Germany", Genre = "Rock", Url = "http://mp3channels.webradio.rockantenne.de/rockantenne", Logo = "logos/f7ac9ff009d425b5.png" },
+            new Station { Name = "Rock FM Cyprus", Country = "Cyprus", Genre = "Rock", Url = "http://live3.istoikona.net:8278/;", Logo = "logos/423e8dbf80222722.png" },
+            new Station { Name = "Rock FM Estonia", Country = "Estonia", Genre = "Rock", Url = "https://edge02.cdn.bitflip.ee:8888/rck?_i=5f5ab186", Logo = "logos/dd8cd3602aa31cdd.png" },
+            new Station { Name = "Sky Radio Skopje", Country = "North Macedonia", Genre = "Pop, Rock", Url = "https://s1.skyradio.com.mk/;*.mp3", Logo = "logos/ad43d5a7d7eb7854.png" },
+            new Station { Name = "Super FM", Country = "Serbia", Genre = "Pop, Hits", Url = "http://onair.superfm.rs/superfm.mp3", Logo = "logos/a5638da1dc13dd30.png" },
+            new Station { Name = "S\u00fcper FM", Country = "Turkey", Genre = "Pop", Url = "https://playerservices.streamtheworld.com/api/livestream-redirect/SUPER_FM_SC", Logo = "logos/de82cc8bbc0f6379.png" },
+            new Station { Name = "SWR3", Country = "Germany", Genre = "Pop, Rock", Url = "https://liveradio.swr.de/sw282p3/swr3/play.mp3", Logo = "logos/443d503fc46317c1.png" },
+            new Station { Name = "The Funky Channel", Country = "Belgium", Genre = "Funk, Soul, Disco", Url = "http://cast3.my-control-panel.com:8170/stream", Logo = "logos/ee8fdd504eba224d.png" },
+            new Station { Name = "Today FM", Country = "Ireland", Genre = "Pop, Rock", Url = "https://stream.audioxi.com/TD", Logo = "logos/39d2bc270759ed12.png" },
+            new Station { Name = "Tomorrowland One World Radio", Country = "Belgium", Genre = "Dance, Electronic", Url = "https://playerservices.streamtheworld.com/api/livestream-redirect/OWR_INTERNATIONAL_ADP.aac", Logo = "logos/4c63fb3ffbe7b9b8.png" },
+            new Station { Name = "Top Albanian Radio", Country = "Albania", Genre = "Albanian Pop", Url = "https://live.top-media.al/tar", Logo = "logos/b99cea57a199708f.png" },
+            new Station { Name = "Urban FM", Country = "North Macedonia", Genre = "Pop", Url = "https://securestreams4.autopo.st:1668/stream", Logo = "logos/b17532234060c353.png" },
+            new Station { Name = "Virgin Radio Romania", Country = "Romania", Genre = "Pop, Dance", Url = "http://astreaming.virginradio.ro:8000/virgin_aacp_64k", Logo = "logos/1500a3b9047ca1af.png" },
+            new Station { Name = "Zeppelin 106.7", Country = "Greece", Genre = "Rock", Url = "https://radiostreaming.ert.gr/ert-zeppelin", Logo = "logos/965106d3b7766276.png" }
         };
     }
 
@@ -664,14 +663,30 @@ static class Stations
     {
         lock (gate)
         {
-            if (!File.Exists(FilePath))
+            bool first = !File.Exists(FilePath);
+            list = first ? Defaults() : Parse(File.ReadAllText(FilePath)) ?? new List<Station>();
+            UnpackBundledLogos();
+            if (first) Save();
+            return first;
+        }
+    }
+
+    // The default stations' logos ship inside the exe, so a first run looks nothing up: a new
+    // program that reaches a hundred servers on its own the moment it starts reads as malware.
+    static void UnpackBundledLogos()
+    {
+        Assembly exe = Assembly.GetExecutingAssembly();
+        foreach (Station s in list)
+        {
+            if (string.IsNullOrEmpty(s.Logo)) continue;
+            string file = Path.GetFileName(s.Logo), path = Path.Combine(LogosDir, file);
+            if (File.Exists(path)) continue;
+            using (Stream res = exe.GetManifestResourceStream("logos/" + file))
             {
-                list = Defaults();
-                Save();
-                return true;
+                if (res == null) continue;
+                Directory.CreateDirectory(LogosDir);
+                using (FileStream f = File.Create(path)) res.CopyTo(f);
             }
-            list = Parse(File.ReadAllText(FilePath)) ?? new List<Station>();
-            return false;
         }
     }
 
